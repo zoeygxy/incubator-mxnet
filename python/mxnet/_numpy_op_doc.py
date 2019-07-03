@@ -366,3 +366,70 @@ def  _np_copy(a, out=None):
     array([0.])
     """
     pass
+
+
+def  _np_bitwise_and(x1, x2):
+    """
+    bitwise_and(x1, x2, /, out=None, *, where=True, casting='same_kind', order='K', dtype=None, subok=True[, signature, extobj])
+
+    Compute the bit-wise AND of two arrays element-wise.
+
+    Computes the bit-wise AND of the underlying binary representation of
+    the integers in the input arrays. This ufunc implements the C/Python
+    operator ``&``.
+
+    Parameters
+    ----------
+    x1, x2 : ndarray
+        Types are cast to integer for calculation.
+    out : ndarray or None, optional
+        A location into which the result is stored. If provided, it must have
+        a shape that the inputs broadcast to. If not provided or `None`,
+        a freshly-allocated array is returned.
+
+    Returns
+    -------
+    out : ndarray
+        Result. `float32` type by default.
+
+    See Also
+    --------
+    logical_and
+    bitwise_or
+    bitwise_xor
+
+    Notes
+    -------
+    This function differs from the original `numpy.copy
+    <https://docs.scipy.org/doc/numpy/reference/generated/numpy.copy.html>`_ in
+    the following aspects:
+    - Input type does not support Python native iterables(list, tuple, ...).
+    - Accepts float type input, but the input will be cast to int64 type for calculation
+    - Output type is `float32` by default.
+
+
+    Examples
+    --------
+    The number 13 is represented by ``00001101``.  Likewise, 17 is
+    represented by ``00010001``.  The bit-wise AND of 13 and 17 is
+    therefore ``000000001``, or 1:
+
+    >>> x1 = np.array(13)
+    >>> x2 = np.array(17)
+    >>> np.bitwise_and(x1, x2)
+    array(1.)
+
+    Supports broadcasting
+
+    >>> a = np.array([[14,3], [15, 1]])
+    >>> b = np.array([14, 2])
+    >>> c = np.zeros((2, 2))
+    >>> np.bitwise_and(a, b, out=c)
+    array([[14.,  2.],
+           [14.,  0.]])
+    >>> c
+    array([[14.,  2.],
+           [14.,  0.]])
+
+    """
+    pass
